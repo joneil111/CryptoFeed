@@ -24,7 +24,7 @@ const Chart = ({ currentPrice, logoUrl, name, symbol, priceChangePercentage7d, s
   const formatUSD = value => {
     'worklet';
     if (value === '') {
-      const formattedValue = `$${latestCurrentPrice.value.toLocaleString('en-US', { currency: 'USD' })}`
+      const formattedValue = `$${latestCurrentPrice.value.toLocaleString('en-US', { style: 'currency',currency: 'USD' })}`
       return formattedValue;
     }
 
