@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import { 
     View, 
     Text, 
@@ -14,7 +14,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function SplashScreen({navigation}) {
     const {signIn} =React.useContext(AuthContext);
-
+    //const [signinReady, setsigninReady] = useState(false);
+    useEffect(() => {
+        setTimeout(() => {
+            signIn();
+        }, 3000)
+    
+      }, [])
+        
 
 
     return (
@@ -31,19 +38,9 @@ export default function SplashScreen({navigation}) {
             
       >
         <Text style={styles.title}>Everything you need to know About Crypto!</Text>
-        <View style={styles.button}>
-        <TouchableOpacity onPress={()=> signIn()}>
-            <LinearGradient
-                colors={['#ffff','black']}
-                style={styles.signIn}>
-                    <Text style={styles.textSign}>Get Started</Text> 
-                    
-                    
-            </LinearGradient>
-                   
-        </TouchableOpacity>
-        </View>
+        
       </Animatable.View>
+      
       
     </View>
     );
