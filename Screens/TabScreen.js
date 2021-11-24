@@ -3,12 +3,14 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Entypo from "react-native-vector-icons/Entypo";
 import { createStackNavigator } from "@react-navigation/stack";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Market from "./Market";
 import Home from "./Home";
 import NewsScreen from "../NewsScreen";
 import DetailsScreen from './DetailsScreen';
 import LiveScreen from   './LiveScreen';
+
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -18,12 +20,15 @@ function HomeStack() {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerStyle: { backgroundColor: "#E9F0FB" },
-        headerTintColor: "#5B628F",
+        headerStyle: { backgroundColor: "#1b73b3" },
+        headerTintColor: "#EEE",
         headerTitleStyle: { fontWeight: "bold" },
       }}
     >
-      <Stack.Screen name="Home" component={Home} options={{ title: "Home" }} />
+      <Stack.Screen 
+      name="Home" 
+      component={Home} 
+      options={{ title: "Home" }} />
       <Stack.Screen
         name="Details"
         component={DetailsScreen}
@@ -37,8 +42,8 @@ function LiveStack() {
 		<Stack.Navigator
 			initialRouteName="Live"
 			screenOptions={{
-				headerStyle: { backgroundColor: '#E9F0FB' },
-				headerTintColor: '#5B628F',
+				headerStyle: { backgroundColor: '#082133' },
+				headerTintColor: '#EEE',
 				headerTitleStyle: { fontWeight: 'bold' }
 			}}>
 			<Stack.Screen
@@ -48,6 +53,41 @@ function LiveStack() {
 		</Stack.Navigator>
 	);
 }
+
+function NewsStack() {
+	return (
+		<Stack.Navigator
+			initialRouteName="News"
+			screenOptions={{
+				headerStyle: { backgroundColor: '#155A8B' },
+				headerTintColor: '#EEE',
+				headerTitleStyle: { fontWeight: 'bold' }
+			}}>
+			<Stack.Screen
+				name="News"
+				component={NewsScreen}
+				options={{ title: 'News' }} />
+		</Stack.Navigator>
+	);
+}
+
+function MarketStack() {
+	return (
+		<Stack.Navigator
+			initialRouteName="Market"
+			screenOptions={{
+				headerStyle: { backgroundColor: '#0F4165' },
+				headerTintColor: '#EEE',
+				headerTitleStyle: { fontWeight: 'bold' }
+			}}>
+			<Stack.Screen
+				name="Market"
+				component={Market}
+				options={{ title: 'Market' }} />
+		</Stack.Navigator>
+	);
+}
+
 const TabNavigator = (navigation) => (
   <Tab.Navigator
     initialRouteName="HomeScreen"
@@ -67,10 +107,10 @@ const TabNavigator = (navigation) => (
     />
     <Tab.Screen
       name="News"
-      component={NewsScreen}
+      component={NewsStack}
       options={{
         tabBarLabel: "News",
-        tabBarColor: "#1f65ff",
+        tabBarColor: "#155A8B",
         tabBarIcon: ({ color }) => (
           <Entypo name="news" color={color} size={24} />
         ),
@@ -78,10 +118,10 @@ const TabNavigator = (navigation) => (
     />
     <Tab.Screen
       name="Market"
-      component={Market}
+      component={MarketStack}
       options={{
         tabBarLabel: "Market",
-        tabBarColor: "#694fad",
+        tabBarColor: "#0F4165",
         tabBarIcon: ({ color }) => (
           <AntDesign name="linechart" color={color} size={24} />
         ),
@@ -92,7 +132,7 @@ const TabNavigator = (navigation) => (
       component={LiveStack}
       options={{
         tabBarLabel: "Live",
-        tabBarColor: "#646fDD",
+        tabBarColor: "#082133",
         tabBarIcon: ({ color }) => (
           <AntDesign name="earth" color={color} size={23} />
         ),

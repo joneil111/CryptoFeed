@@ -20,7 +20,7 @@ const LiveScreen = ({ navigation }) => {
 
   useEffect(() => {
     fetch(
-      "http://api.coinlayer.com/live?access_key=e93826fbcfb3e74d8064a30ebea86df5&expand=1"
+      "http://api.coinlayer.com/live?access_key=85810237744104965dbfe907cadf263b&expand=1"
     )
       .then((response) => response.json())
       .then((responseJson) => {

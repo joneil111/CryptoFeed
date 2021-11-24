@@ -19,7 +19,7 @@ const HomeScreen = ({ navigation }) => {
     const [masterDataSource, setMasterDataSource] = useState([]);
 
     useEffect(() => {
-        fetch('http://api.coinlayer.com/list?access_key=e93826fbcfb3e74d8064a30ebea86df5')
+        fetch('http://api.coinlayer.com/list?access_key=85810237744104965dbfe907cadf263b')
         .then((response) => response.json())
         .then((responseJson) => {
 

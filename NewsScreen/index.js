@@ -59,13 +59,13 @@ export default class NewsScreen extends Component {
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1, backgroundColor: "#EEEEEE" }}>
           <StatusBar style="dark" />
-          <Header />
+          {/* <Header /> */}
 
           <ScrollView
             style={{
               backgroundColor: "#EEEEEE",
               marginHorizontal: 10,
-              marginTop: 80,
+              marginTop: 5,
             }}
           >
             {!isLoading ? (
@@ -76,10 +76,10 @@ export default class NewsScreen extends Component {
                     key={url}
                     style={{
                       marginTop: 10,
-                      borderColor: "#EEEEEE",
-                      borderRadius: 10,
+                      borderColor: "transparent",
+                      borderRadius: 20,
                       borderBottomWidth: 1,
-                      elevated: 1,
+                      elevation: 1,
                     }}
                     onPress={() => {
                       Linking.openURL(`${url}`);
