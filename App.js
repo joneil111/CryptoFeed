@@ -37,7 +37,7 @@ export default function App() {
     switch (action.type) {
       case "LOGIN":
         return {
-          ...prevstate,
+          
 
           isLoading: false,
         };

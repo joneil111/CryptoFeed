@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, Image, Dimensions, ActivityIndicator } from 'react-native'
 import {ChartDot, ChartPath, ChartPathProvider, ChartYLabel} from '@rainbow-me/animated-charts';
 import { useSharedValue } from 'react-native-reanimated';
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const { width: SIZE } = Dimensions.get('window');
 
@@ -11,6 +12,8 @@ const Chart = ({ currentPrice, logoUrl, name, symbol, priceChangePercentage7d, s
   const [chartReady, setChartReady] = useState(false);
 
   const priceChangeColor = priceChangePercentage7d > 0 ? '#34C759' : '#FF3B30';
+  const priceChangeshapecolour = priceChangePercentage7d > 0 ? 'green' : 'red';
+  const priceChangeshape = priceChangePercentage7d > 0 ? 'arrow-up' : 'arrow-down';
 
   useEffect(() => {
     latestCurrentPrice.value = currentPrice;
@@ -54,7 +57,14 @@ const Chart = ({ currentPrice, logoUrl, name, symbol, priceChangePercentage7d, s
               format={formatUSD}
               style={styles.boldTitle}
             />
-            <Text style={[styles.title, {color: priceChangeColor}]}>{priceChangePercentage7d.toFixed(2)}%</Text>
+            <Text style={[styles.title, {color: priceChangeColor}]}>
+              <MaterialCommunityIcons
+                          name={priceChangeshape}
+                          color={priceChangeshapecolour}
+                          size={16}
+                        />
+              
+              {priceChangePercentage7d.toFixed(2)}%</Text>
           </View>
         </View>
 

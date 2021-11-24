@@ -8,6 +8,7 @@ import {
   BottomSheetModalProvider,
 } from "@gorhom/bottom-sheet";
 import { getMarketData } from "../services/cryptoService";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const ListHeader = () => (
   <>
@@ -53,7 +54,9 @@ export default function Market() {
             keyExtractor={(item) => item.id}
             data={data}
             renderItem={({ item }) => (
+              
               <ListItem
+                
                 name={item.name}
                 symbol={item.symbol}
                 currentPrice={item.current_price
@@ -63,8 +66,10 @@ export default function Market() {
                   item.price_change_percentage_7d_in_currency
                 }
                 logoUrl={item.image}
+                
                 onPress={() => openModal(item)}
               />
+              
             )}
             ListHeaderComponent={<ListHeader style />}
           />
@@ -126,5 +131,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+  },
+  tab: {
+    backgroundColor: "#fff",
   },
 });
