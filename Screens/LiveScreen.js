@@ -94,9 +94,9 @@ const LiveScreen = ({ navigation }) => {
               padding: 10,
             }}
           >
-            <View style={[styles.subCard, { alignItems: "center" }]}>
+            <View style={[styles.subCard]}>
               <View style={styles.subCardInfo}>
-                <Text style={styles.titleDescription}>Rate :</Text>
+                <Text style={styles.titleDescription}>Rate:</Text>
                 {item.rate === null ? (
                   <Text style={styles.titleDescription}>null</Text>
                 ) : (
@@ -104,7 +104,7 @@ const LiveScreen = ({ navigation }) => {
                 )}
               </View>
               <View style={styles.subCardInfo}>
-                <Text style={styles.titleDescription}>Volume :</Text>
+                <Text style={styles.titleDescription}>Volume:</Text>
                 {item.vol === null ? (
                   <Text style={styles.titleDescription}>null</Text>
                 ) : (
@@ -215,7 +215,7 @@ const LiveScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#E9F0FB" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#EEEE" }}>
       <View>
         <TextInput
           style={styles.textInputStyle}
@@ -276,11 +276,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
 
     textAlign: "center",
-    color: "#fff",
+    color: "#EEE",
   },
   subCard: {
     flex: 1,
-    backgroundColor: "#EAEBF5",
+    backgroundColor: "#EEE",
     justifyContent: "center",
     paddingLeft: 10,
     borderRadius: 15,
