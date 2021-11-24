@@ -91,7 +91,7 @@ const TabNavigator = (navigation) => (
       component={LiveStack}
       options={{
         tabBarLabel: "Live",
-        tabBarColor: "#1b73b3",
+        tabBarColor: "#646fDD",
         tabBarIcon: ({ color }) => (
           <AntDesign name="home" color={color} size={26} />
         ),

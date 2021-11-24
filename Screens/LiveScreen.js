@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
 		borderWidth: 2,
 		borderRadius: 27,
         borderColor: 'transparent',
-        backgroundColor: '#EC5551',
+        backgroundColor: '#646fDD',
         shadowColor: '#000',
         elevation: 10
 	},
@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
 		margin: 5,
 		borderRadius: 20,
 		borderBottomLeftRadius: 0,
-		borderColor: '#009688',
+		borderColor: '#784fDD',
 		backgroundColor: '#FFFFFF',
 	},
 });
