@@ -4,7 +4,6 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Market from "./Market";
-import News from "./News";
 import Home from "./Home";
 import NewsScreen from "../NewsScreen";
 import DetailsScreen from './DetailsScreen';
