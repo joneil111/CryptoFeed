@@ -15,8 +15,6 @@ export default function App() {
 
   const initialLoginState = {
     isLoading: true,
-    userName: null,
-    userToken: null,
   };
 
   const authContext = React.useMemo(
@@ -30,32 +28,18 @@ export default function App() {
         }
         //console.log('user token',username);
       },
-      signOut: async () => {
-        dispatch({ type: "LOGOUT" });
-      },
+      
     }),
     []
   );
 
   const loginReducer = (prevstate, action) => {
     switch (action.type) {
-      case "RETRIEVE_TOKEN":
-        return {
-          ...prevstate,
-
-          isLoading: false,
-        };
       case "LOGIN":
         return {
           ...prevstate,
 
           isLoading: false,
-        };
-      case "LOGOUT":
-        return {
-          ...prevstate,
-
-          isLoading: true,
         };
     }
   };

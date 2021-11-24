@@ -15,24 +15,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 export default function SplashScreen({navigation}) {
     const {signIn} =React.useContext(AuthContext);
 
-const [data, setData] = React.useState({
-    isloading:true,
-    
-});
 
-const changer=()=>{
-
-    setData({
-        ...data,
-        isloading:false
-    })
-
-}
-
-const loginhandle = ()=>{
-        
-    signIn(false)
-}
 
     return (
     <View style={styles.container}>
