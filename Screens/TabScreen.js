@@ -45,7 +45,7 @@ const TabNavigator = (navigation) => (
       component={HomeStack}
       options={{
         tabBarLabel: "Home",
-        tabBarColor: "#009387",
+        tabBarColor: "#1b73b3",
         tabBarIcon: ({ color }) => (
           <AntDesign name="home" color={color} size={26} />
         ),

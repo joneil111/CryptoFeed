@@ -7,7 +7,7 @@ import { AuthContext } from "./Components/contents";
 import Home from "./Screens/Home";
 import RootStackScreen from "./Screens/RootStackScreen";
 import Tabscreen from "./Screens/TabScreen";
-
+console.disableYellowBox = true;
 const Stack = createStackNavigator();
 export default function App() {
   const [isLoading, setisloading] = React.useState(true);
