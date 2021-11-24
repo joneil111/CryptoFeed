@@ -1,6 +1,7 @@
 import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import AntDesign from "react-native-vector-icons/AntDesign";
+import Entypo from "react-native-vector-icons/Entypo";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Market from "./Market";
@@ -71,7 +72,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "News",
         tabBarColor: "#1f65ff",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="infocirlce" color={color} size={24} />
+          <Entypo name="news" color={color} size={24} />
         ),
       }}
     />
