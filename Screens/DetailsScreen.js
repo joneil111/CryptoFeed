@@ -26,7 +26,7 @@ class DetailsScreen extends React.Component {
 
 
 	callToAPI() {
-		fetch(`http://api.coinlayer.com/${this.state.date}?access_key=08bca5ed6980c1d4613437f8b0de9cbe&symbols=${this.state.symbol}`)
+		fetch(`http://api.coinlayer.com/${this.state.date}?access_key=e93826fbcfb3e74d8064a30ebea86df5&symbols=${this.state.symbol}`)
 			.then((response) => response.json())
 			.then((response) => {
 				this.setState({ 
