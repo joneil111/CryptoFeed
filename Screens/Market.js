@@ -50,7 +50,9 @@ export default function Market() {
             <ListItem
               name={item.name}
               symbol={item.symbol}
-              currentPrice={item.current_price}
+              currentPrice={item.current_price.toLocaleString(undefined, {
+                maximumFractionDigits: 2,
+              })}
               priceChangePercentage7d={
                 item.price_change_percentage_7d_in_currency
               }
