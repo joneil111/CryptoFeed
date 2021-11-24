@@ -1,42 +1,40 @@
 import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from "@react-navigation/stack";
 
 import Market from "./Market";
 import Home from "./Home";
 import NewsScreen from "../NewsScreen";
-import DetailsScreen from './DetailsScreen';
+import DetailsScreen from "./DetailsScreen";
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
 function HomeStack() {
-    return (
-        <Stack.Navigator
-            initialRouteName="Home"
-            screenOptions={{
-            headerStyle: { backgroundColor: '#E9F0FB' },
-            headerTintColor: '#5B628F',
-            headerTitleStyle: { fontWeight: 'bold' }
-            }}>
-            <Stack.Screen
-                name="Home"
-                component={Home}
-                options={{ title: 'Home' }}/>
-            <Stack.Screen
-                name="Details"
-                component={DetailsScreen}
-                options={{ title: 'Historic CryptoCurrency' }} />
-        </Stack.Navigator>
-    );
+  return (
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerStyle: { backgroundColor: "#E9F0FB" },
+        headerTintColor: "#5B628F",
+        headerTitleStyle: { fontWeight: "bold" },
+      }}
+    >
+      <Stack.Screen name="Home" component={Home} options={{ title: "Home" }} />
+      <Stack.Screen
+        name="Details"
+        component={DetailsScreen}
+        options={{ title: "Historic CryptoCurrency" }}
+      />
+    </Stack.Navigator>
+  );
 }
 const TabNavigator = (navigation) => (
   <Tab.Navigator
     initialRouteName="HomeScreen"
     activeColor="#fff"
     shifting={true}
-    
   >
     <Tab.Screen
       name="Home"
@@ -45,7 +43,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "Home",
         tabBarColor: "#1b73b3",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="home" color={color} size={26} />
+          <AntDesign name="home" color={color} size={24} />
         ),
       }}
     />
@@ -56,7 +54,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "News",
         tabBarColor: "#1f65ff",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="infocirlceo" color={color} size={26} />
+          <AntDesign name="infocirlceo" color={color} size={24} />
         ),
       }}
     />
@@ -67,7 +65,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "Market",
         tabBarColor: "#694fad",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="linechart" color={color} size={26} />
+          <AntDesign name="linechart" color={color} size={24} />
         ),
       }}
     />
