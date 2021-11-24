@@ -53,15 +53,15 @@ class DetailsScreen extends React.Component {
 					:
 					<SafeAreaView style={{ flex: 5 }}>
 						<View style={{ flex: 2, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
-							<View style={{ fontWeight: 'bold', fontSize: 18, textAlign: 'center', color: '#fff'}}>
+							<View style={styles.timeCards}>
 								<Text style={styles.cardTitle}>Year</Text>
 								<Text style={styles.cardSubtitle}>{this.state.dateTime.year}</Text>
 							</View>
-							<View style={{ fontWeight: 'bold', fontSize: 18, textAlign: 'center', color: '#fff'}}>
+							<View style={styles.timeCards}>
 								<Text style={styles.cardTitle}>Month</Text>
 								<Text style={styles.cardSubtitle}>{this.state.dateTime.month}</Text>
 							</View>	
-							<View style={{ fontWeight: 'bold', fontSize: 18, textAlign: 'center', color: '#fff'}}>
+							<View style={styles.timeCards}>
 								<Text style={styles.cardTitle}>Day</Text>
 								<Text style={styles.cardSubtitle}>{this.state.dateTime.day}</Text>
 							</View>									
@@ -129,19 +129,43 @@ const styles = StyleSheet.create({
 		elevation: 5 
 	},
 	cardTitle: { 
-		fontSize: 30, 
+		fontSize: 20, 
 		fontWeight: "900",
-		color: '#1b73b3'
+		color: '#fff',
+		marginTop: -40,
 	},
 	cardSubtitle: {
-		paddingTop: 10,
+		paddingTop: 20,
 		fontSize: 17,
-		color: '#1b73b3'
+		color: '#fff',
+		marginTop: -10,
+		height:50,
 	},
 	datePickerStyle: {
 		width: 200,
 		marginTop: 20,
 	},
+	timeCards: {
+        //backgroundColor: '#1b73b3',
+        //borderRadius: 20,
+        borderColor: '#4034BF',
+        borderWidth: 1,
+        height: 60,
+        width: 100,
+        paddingVertical: 60,
+		paddingBottom: 10,
+        //justifyContent: 'space-between',
+		flexDirection:'column', 
+        alignItems: 'center',
+        elevation: 15,
+		backgroundColor: '#1b73b3', 
+		justifyContent: 'center', 
+		padding: 20, 
+		marginVertical: 10, 
+		borderRadius: 20, 
+		
+    },
+
 });
 
 export default DetailsScreen;
