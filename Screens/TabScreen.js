@@ -7,6 +7,7 @@ import Market from "./Market";
 import Home from "./Home";
 import NewsScreen from "../NewsScreen";
 import DetailsScreen from './DetailsScreen';
+import LiveScreen from   './LiveScreen';
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -30,6 +31,22 @@ function HomeStack() {
                 options={{ title: 'Historic CryptoCurrency' }} />
         </Stack.Navigator>
     );
+}
+function LiveStack() {
+	return (
+		<Stack.Navigator
+			initialRouteName="Live"
+			screenOptions={{
+				headerStyle: { backgroundColor: '#E9F0FB' },
+				headerTintColor: '#5B628F',
+				headerTitleStyle: { fontWeight: 'bold' }
+			}}>
+			<Stack.Screen
+				name="Live"
+				component={LiveScreen}
+				options={{ title: 'Live Currency' }} />
+		</Stack.Navigator>
+	);
 }
 const TabNavigator = (navigation) => (
   <Tab.Navigator
@@ -68,6 +85,17 @@ const TabNavigator = (navigation) => (
         tabBarColor: "#694fad",
         tabBarIcon: ({ color }) => (
           <AntDesign name="linechart" color={color} size={26} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Live"
+      component={LiveStack}
+      options={{
+        tabBarLabel: "Live",
+        tabBarColor: "#1b73b3",
+        tabBarIcon: ({ color }) => (
+          <AntDesign name="home" color={color} size={26} />
         ),
       }}
     />
