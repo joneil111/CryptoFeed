@@ -230,7 +230,7 @@ const LiveScreen = ({ navigation }) => {
               size="large"
               color="#082133"
               animating={isLoading}
-              style={{ justifyContent: "center", marginTop: "40%" }}
+              style={{ justifyContent: "center", marginTop: "60%" }}
             />
             <Text
               style={{

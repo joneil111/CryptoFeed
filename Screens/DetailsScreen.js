@@ -148,10 +148,8 @@ const styles = StyleSheet.create({
 	timeCards: {
         //backgroundColor: '#1b73b3',
         //borderRadius: 20,
-        borderColor: '#4034BF',
-        borderWidth: 1,
-        height: 60,
-        width: 100,
+        height: 80,
+        width: 110,
         paddingVertical: 60,
 		paddingBottom: 10,
         //justifyContent: 'space-between',

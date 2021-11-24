@@ -6,6 +6,7 @@ import {
   ScrollView,
   Linking,
   SafeAreaView,
+  ActivityIndicator
 } from "react-native";
 import axios from "axios";
 import { Card, Title, Paragraph } from "react-native-paper";
@@ -51,15 +52,15 @@ export default class NewsScreen extends Component {
     const { isLoading, articles } = this.state;
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flex: 1, backgroundColor: "black" }}>
+        <View style={{ flex: 1 }}>
           <StatusBar style="light" />
           
 
           <ScrollView
             style={{
-              backgroundColor: "black",
+              backgroundColor: "#EEE",
               marginHorizontal: 10,
-              marginTop: 80,
+              marginTop: 9,
             }}
           >
             {!isLoading ? (
@@ -70,8 +71,7 @@ export default class NewsScreen extends Component {
                     key={url}
                     style={{
                       marginTop: 10,
-                      borderColor: "black",
-                      borderRadius: 10,
+                      borderRadius: 20,
                       borderBottomWidth: 1,
                       elevated: 1,
                     }}
@@ -106,9 +106,24 @@ export default class NewsScreen extends Component {
                 );
               })
             ) : (
-              <Text style={{ justifyContent: "center", alignItems: "center" }}>
-                Loading...
-              </Text>
+              <View>
+            <ActivityIndicator
+              size="large"
+              color="#155A8B"
+              animating={isLoading}
+              style={{ justifyContent: "center", marginTop: "60%" }}
+            />
+            <Text
+              style={{
+                color: "#155A8B",
+                textAlign: "center",
+                fontSize: 25,
+                paddingTop: 20,
+              }}
+            >
+              Loading . . .{" "}
+            </Text>
+          </View>
             )}
           </ScrollView>
         </View>
