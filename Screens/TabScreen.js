@@ -6,7 +6,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Market from "./Market";
 import Home from "./Home";
 import NewsScreen from "../NewsScreen";
-import DetailsScreen from "./DetailsScreen";
+import DetailsScreen from './DetailsScreen';
+import LiveScreen from   './LiveScreen';
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -29,6 +30,22 @@ function HomeStack() {
       />
     </Stack.Navigator>
   );
+}
+function LiveStack() {
+	return (
+		<Stack.Navigator
+			initialRouteName="Live"
+			screenOptions={{
+				headerStyle: { backgroundColor: '#E9F0FB' },
+				headerTintColor: '#5B628F',
+				headerTitleStyle: { fontWeight: 'bold' }
+			}}>
+			<Stack.Screen
+				name="Live"
+				component={LiveScreen}
+				options={{ title: 'Live Currency' }} />
+		</Stack.Navigator>
+	);
 }
 const TabNavigator = (navigation) => (
   <Tab.Navigator
@@ -66,6 +83,17 @@ const TabNavigator = (navigation) => (
         tabBarColor: "#694fad",
         tabBarIcon: ({ color }) => (
           <AntDesign name="linechart" color={color} size={24} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Live"
+      component={LiveStack}
+      options={{
+        tabBarLabel: "Live",
+        tabBarColor: "#646fDD",
+        tabBarIcon: ({ color }) => (
+          <AntDesign name="home" color={color} size={26} />
         ),
       }}
     />
