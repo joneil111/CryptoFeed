@@ -71,7 +71,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "News",
         tabBarColor: "#1f65ff",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="info" color={color} size={24} />
+          <AntDesign name="infocirlce" color={color} size={24} />
         ),
       }}
     />
@@ -93,7 +93,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "Live",
         tabBarColor: "#646fDD",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="earth" color={color} size={26} />
+          <AntDesign name="earth" color={color} size={23} />
         ),
       }}
     />
