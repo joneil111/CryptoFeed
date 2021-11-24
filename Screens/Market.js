@@ -43,25 +43,32 @@ export default function Market() {
   return (
     <BottomSheetModalProvider>
       <SafeAreaView style={styles.container}>
-        <FlatList
-          keyExtractor={(item) => item.id}
-          data={data}
-          renderItem={({ item }) => (
-            <ListItem
-              name={item.name}
-              symbol={item.symbol}
-              currentPrice={item.current_price
-                .toFixed(2)
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-              priceChangePercentage7d={
-                item.price_change_percentage_7d_in_currency
-              }
-              logoUrl={item.image}
-              onPress={() => openModal(item)}
-            />
-          )}
-          ListHeaderComponent={<ListHeader />}
-        />
+        <View
+          style={{
+            backgroundColor: "#ECECEC",
+            marginHorizontal: 10,
+          }}
+        >
+          <FlatList
+            keyExtractor={(item) => item.id}
+            data={data}
+            renderItem={({ item }) => (
+              <ListItem
+                name={item.name}
+                symbol={item.symbol}
+                currentPrice={item.current_price
+                  .toFixed(2)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                priceChangePercentage7d={
+                  item.price_change_percentage_7d_in_currency
+                }
+                logoUrl={item.image}
+                onPress={() => openModal(item)}
+              />
+            )}
+            ListHeaderComponent={<ListHeader style />}
+          />
+        </View>
       </SafeAreaView>
 
       <BottomSheetModal
