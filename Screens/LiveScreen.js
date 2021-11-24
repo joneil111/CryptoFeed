@@ -228,13 +228,13 @@ const LiveScreen = ({ navigation }) => {
           <View>
             <ActivityIndicator
               size="large"
-              color="#0000ff"
+              color="#082133"
               animating={isLoading}
               style={{ justifyContent: "center", marginTop: "40%" }}
             />
             <Text
               style={{
-                color: "#0000ff",
+                color: "#082133",
                 textAlign: "center",
                 fontSize: 25,
                 paddingTop: 20,
@@ -262,9 +262,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginVertical: 10,
     borderWidth: 2,
-    borderRadius: 27,
+    borderRadius: 20,
     borderColor: "transparent",
-    backgroundColor: "#646fDD",
+    backgroundColor: "#082133",
     shadowColor: "#000",
     elevation: 10,
   },
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
     margin: 5,
     borderRadius: 20,
     borderBottomLeftRadius: 0,
-    borderColor: "#784fDD",
+    borderColor: "#082133",
     backgroundColor: "#FFFFFF",
   },
 });

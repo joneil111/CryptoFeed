@@ -10,14 +10,6 @@ import {
 import { getMarketData } from "../services/cryptoService";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-const ListHeader = () => (
-  <>
-    <View style={styles.titleWrapper}>
-      <Text style={styles.largeTitle}>Markets</Text>
-    </View>
-    <View style={styles.divider} />
-  </>
-);
 
 export default function Market() {
   const [data, setData] = useState([]);
@@ -47,7 +39,7 @@ export default function Market() {
         <View
           style={{
             backgroundColor: "#ECECEC",
-            marginHorizontal: 10,
+            paddingVertical: 10,
           }}
         >
           <FlatList
@@ -71,7 +63,7 @@ export default function Market() {
               />
               
             )}
-            ListHeaderComponent={<ListHeader style />}
+           
           />
         </View>
       </SafeAreaView>
