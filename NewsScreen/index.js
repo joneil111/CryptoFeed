@@ -11,6 +11,8 @@ import axios from "axios";
 import { Card, Title, Paragraph } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 
+import Header from "../Components/AppBar";
+
 export default class NewsScreen extends Component {
   state = {
     articles: [],
@@ -19,15 +21,9 @@ export default class NewsScreen extends Component {
   };
 
   getArticles() {
-    const current = new Date();
-    const date = `${current.getFullYear()}/${
-      current.getMonth() + 1
-    }/${current.getDate()}`;
     axios
       .get(
-        "https://newsapi.org/v2/everything?q=Cryptocurrency&from=" +
-          date +
-          "&sortBy=popularity&apiKey=7f0268bbd7e74178b529b3eb0e8ec9e4"
+        "https://newsapi.org/v2/everything?q=Cryptocurrency&from=2021-11-20&sortBy=popularity&apiKey=7f0268bbd7e74178b529b3eb0e8ec9e4"
       )
       .then((response) =>
         response.data.articles.map((article) => ({
@@ -55,15 +51,15 @@ export default class NewsScreen extends Component {
     const { isLoading, articles } = this.state;
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flex: 1, backgroundColor: "#EEEEEE" }}>
-          <StatusBar style="dark" />
-          {/* <Header /> */}
+        <View style={{ flex: 1, backgroundColor: "black" }}>
+          <StatusBar style="light" />
+          
 
           <ScrollView
             style={{
-              backgroundColor: "#EEEEEE",
+              backgroundColor: "black",
               marginHorizontal: 10,
-              marginTop: 5,
+              marginTop: 80,
             }}
           >
             {!isLoading ? (
@@ -74,10 +70,10 @@ export default class NewsScreen extends Component {
                     key={url}
                     style={{
                       marginTop: 10,
-                      borderColor: "transparent",
-                      borderRadius: 20,
+                      borderColor: "black",
+                      borderRadius: 10,
                       borderBottomWidth: 1,
-                      elevation: 1,
+                      elevated: 1,
                     }}
                     onPress={() => {
                       Linking.openURL(`${url}`);
