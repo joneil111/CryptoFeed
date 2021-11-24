@@ -15,8 +15,6 @@ export default function App() {
 
   const initialLoginState = {
     isLoading: true,
-    userName: null,
-    userToken: null,
   };
 
   const authContext = React.useMemo(
