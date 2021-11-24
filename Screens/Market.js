@@ -26,7 +26,7 @@ export default function Market() {
 
   const bottomSheetModalRef = useRef(null);
 
-  const snapPoints = useMemo(() => ["50%"], []);
+  const snapPoints = useMemo(() => ["60%"], []);
 
   const openModal = (item) => {
     setSelectedCoinData(item);
