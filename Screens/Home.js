@@ -95,7 +95,7 @@ const ItemView = ({ item }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#E9F0FB' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#EEE' }}>
       <View>
         <TextInput
           style={styles.textInputStyle}
