@@ -93,7 +93,7 @@ class DetailsScreen extends React.Component {
 						mode="date" 
 						placeholder="Select Date"
 						format="YYYY-MM-DD"
-						minDate="2000-01-20"
+						minDate="2018-04-01"
 						maxDate={this.state.maxDate}
 						confirmBtnText="Confirm"
 						cancelBtnText="Cancel"
