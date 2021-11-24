@@ -121,7 +121,7 @@ class DetailsScreen extends React.Component {
 
 const styles = StyleSheet.create({
 	cardDetails: { 
-		backgroundColor: '#009688', 
+		backgroundColor: '#1b73b3', 
 		justifyContent: 'center', 
 		padding: 20, 
 		marginVertical: 10, 
@@ -131,12 +131,12 @@ const styles = StyleSheet.create({
 	cardTitle: { 
 		fontSize: 30, 
 		fontWeight: "900",
-		color: '#009688'
+		color: '#1b73b3'
 	},
 	cardSubtitle: {
 		paddingTop: 10,
 		fontSize: 17,
-		color: '#009688'
+		color: '#1b73b3'
 	},
 	datePickerStyle: {
 		width: 200,
