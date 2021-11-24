@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Appbar } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Entypo from "react-native-vector-icons/Entypo";
 
 const Header = () => {
   return (
@@ -25,7 +26,6 @@ const Header = () => {
         paddingTop: Platform.OS === "android" ? 10 : 0,
       }}
     >
-      {<MaterialCommunityIcons name="newspaper" size={24} color="white" />}
       <Appbar.Content title="News" />
     </Appbar.Header>
   );

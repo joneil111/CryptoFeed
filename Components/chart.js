@@ -70,8 +70,8 @@ const Chart = ({ currentPrice, logoUrl, name, symbol, priceChangePercentage7d, s
 
         { chartReady ?
         (<View style={styles.chartLineWrapper}>
-          <ChartPath height={SIZE / 2} stroke="#694fad" width={SIZE} />
-          <ChartDot style={{ backgroundColor: 'black' }} />
+          <ChartPath height={SIZE / 2} stroke="#0F4165" width={SIZE} />
+          <ChartDot style={{ backgroundColor: '#0F4165' }} />
           </View>)
 
           :
