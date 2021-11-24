@@ -51,13 +51,13 @@ export default class NewsScreen extends Component {
     const { isLoading, articles } = this.state;
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flex: 1, backgroundColor: "black" }}>
+        <View style={{ flex: 1, backgroundColor: "#EEEEEE" }}>
           <StatusBar style="light" />
           <Header />
 
           <ScrollView
             style={{
-              backgroundColor: "black",
+              backgroundColor: "#EEEEEE",
               marginHorizontal: 10,
               marginTop: 80,
             }}
@@ -70,7 +70,7 @@ export default class NewsScreen extends Component {
                     key={url}
                     style={{
                       marginTop: 10,
-                      borderColor: "black",
+                      borderColor: "#EEEEEE",
                       borderRadius: 10,
                       borderBottomWidth: 1,
                       elevated: 1,

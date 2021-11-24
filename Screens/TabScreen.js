@@ -36,7 +36,7 @@ const TabNavigator = (navigation) => (
     initialRouteName="HomeScreen"
     activeColor="#fff"
     shifting={true}
-    style={{ borderRadius: 10 }}
+    
   >
     <Tab.Screen
       name="Home"
