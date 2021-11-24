@@ -26,7 +26,7 @@ const Header = () => {
       }}
     >
       {<MaterialCommunityIcons name="newspaper" size={24} color="white" />}
-      <Appbar.Content title="CryptoFeed" />
+      <Appbar.Content title="News" />
     </Appbar.Header>
   );
 };

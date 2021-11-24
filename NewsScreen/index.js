@@ -58,7 +58,7 @@ export default class NewsScreen extends Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1, backgroundColor: "#EEEEEE" }}>
-          <StatusBar style="light" />
+          <StatusBar style="dark" />
           <Header />
 
           <ScrollView

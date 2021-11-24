@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   container: {
     //flex:1,
     flexGrow: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#EEEE",
   },
   titleWrapper: {
     //flex:1,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   bottomSheet: {
-    shadowColor: "#000",
+    shadowColor: "#fff",
     shadowOffset: {
       width: 0,
       height: -4,
