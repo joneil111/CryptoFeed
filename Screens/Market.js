@@ -1,5 +1,5 @@
 import React, { useRef, useMemo, useState, useEffect } from "react";
-import { FlatList, StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { FlatList, StyleSheet, View, SafeAreaView } from "react-native";
 import ListItem from "../Components/ListItem";
 import Chart from "../Components/chart";
 
@@ -8,7 +8,6 @@ import {
   BottomSheetModalProvider,
 } from "@gorhom/bottom-sheet";
 import { getMarketData } from "../services/cryptoService";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 
 export default function Market() {

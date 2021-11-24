@@ -11,8 +11,6 @@ import axios from "axios";
 import { Card, Title, Paragraph } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 
-import Header from "../Components/AppBar";
-
 export default class NewsScreen extends Component {
   state = {
     articles: [],

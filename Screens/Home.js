@@ -109,11 +109,11 @@ const ItemView = ({ item }) => {
 			<View>
 				<ActivityIndicator 
 					size="large" 
-					color="#009387" 
+					color="#1b73b3" 
 					animating={isLoading}
 					style={{ justifyContent: 'center', marginTop: '40%' }}
 				/>
-				<Text style={{ color: "#009387" , textAlign: 'center', fontSize: 25, paddingTop: 20 }} >Loading . . . </Text>
+				<Text style={{ color: "#1b73b3" , textAlign: 'center', fontSize: 25, paddingTop: 20 }} >Loading . . . </Text>
 			</View>
 			: null
 		}
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
 		margin: 5,
 		borderRadius: 20,
 		borderBottomLeftRadius: 0,
-		borderColor: '#009688',
+		borderColor: '#1b73b3',
 		backgroundColor: '#FFFFFF',
 	},
 });

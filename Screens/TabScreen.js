@@ -101,7 +101,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "Home",
         tabBarColor: "#1b73b3",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="home" color={color} size={24} />
+          <AntDesign name="home" color={color} size={23} />
         ),
       }}
     />
@@ -112,7 +112,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "News",
         tabBarColor: "#155A8B",
         tabBarIcon: ({ color }) => (
-          <Entypo name="news" color={color} size={24} />
+          <Entypo name="news" color={color} size={23} />
         ),
       }}
     />
@@ -123,7 +123,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "Market",
         tabBarColor: "#0F4165",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="linechart" color={color} size={24} />
+          <AntDesign name="linechart" color={color} size={23} />
         ),
       }}
     />
