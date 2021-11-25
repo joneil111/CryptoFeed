@@ -6,13 +6,11 @@ import {
   ScrollView,
   Linking,
   SafeAreaView,
-  ActivityIndicator
+  ActivityIndicator,
 } from "react-native";
 import axios from "axios";
 import { Card, Title, Paragraph } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
-
-import Header from "../Components/AppBar";
 
 export default class NewsScreen extends Component {
   state = {
@@ -54,7 +52,6 @@ export default class NewsScreen extends Component {
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1 }}>
           <StatusBar style="light" />
-          
 
           <ScrollView
             style={{
@@ -107,23 +104,23 @@ export default class NewsScreen extends Component {
               })
             ) : (
               <View>
-            <ActivityIndicator
-              size="large"
-              color="#155A8B"
-              animating={isLoading}
-              style={{ justifyContent: "center", marginTop: "60%" }}
-            />
-            <Text
-              style={{
-                color: "#155A8B",
-                textAlign: "center",
-                fontSize: 25,
-                paddingTop: 20,
-              }}
-            >
-              Loading . . .{" "}
-            </Text>
-          </View>
+                <ActivityIndicator
+                  size="large"
+                  color="#155A8B"
+                  animating={isLoading}
+                  style={{ justifyContent: "center", marginTop: "60%" }}
+                />
+                <Text
+                  style={{
+                    color: "#155A8B",
+                    textAlign: "center",
+                    fontSize: 25,
+                    paddingTop: 20,
+                  }}
+                >
+                  Loading . . .{" "}
+                </Text>
+              </View>
             )}
           </ScrollView>
         </View>
