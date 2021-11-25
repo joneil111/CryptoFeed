@@ -7,7 +7,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Market from "./Market";
 import Home from "./Home";
-import NewsScreen from "../NewsScreen";
+import NewsScreen from "../services/index";
 import DetailsScreen from './DetailsScreen';
 import LiveScreen from   './LiveScreen';
 

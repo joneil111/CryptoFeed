@@ -71,7 +71,7 @@ export default function Market() {
         ref={bottomSheetModalRef}
         index={0}
         snapPoints={snapPoints}
-        style={styles.bottomSheet}
+
       >
         {selectedCoinData ? (
           <Chart
@@ -90,40 +90,11 @@ export default function Market() {
   );
 }
 
+//styles for this screen
 const styles = StyleSheet.create({
   container: {
-    //flex:1,
     flexGrow: 1,
     backgroundColor: "#EEEE",
   },
-  titleWrapper: {
-    //flex:1,
-    marginTop: 40,
-    paddingHorizontal: 16,
-  },
-  largeTitle: {
-    //flex:1,
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  divider: {
-    //flex:1,
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: "#A9ABB1",
-    marginHorizontal: 16,
-    marginTop: 16,
-  },
-  bottomSheet: {
-    shadowColor: "#fff",
-    shadowOffset: {
-      width: 0,
-      height: -4,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  tab: {
-    backgroundColor: "#fff",
-  },
+
 });
