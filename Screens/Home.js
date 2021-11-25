@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
 
 	{/*Get teh data from the api */}
     useEffect(() => {
-        fetch('http://api.coinlayer.com/list?access_key=85810237744104965dbfe907cadf263b')
+        fetch('http://api.coinlayer.com/list?access_key=f85a0848af743a54be52332e3d35abae')
         .then((response) => response.json())
         .then((responseJson) => {
 

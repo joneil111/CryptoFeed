@@ -30,7 +30,7 @@ class DetailsScreen extends React.Component {
 
 // Get the data from the API
 	callToAPI() {
-		fetch(`http://api.coinlayer.com/${this.state.date}?access_key=85810237744104965dbfe907cadf263b&symbols=${this.state.symbol}`)
+		fetch(`http://api.coinlayer.com/${this.state.date}?access_key=f85a0848af743a54be52332e3d35abae&symbols=${this.state.symbol}`)
 			.then((response) => response.json())
 			.then((response) => {
 				this.setState({ 
