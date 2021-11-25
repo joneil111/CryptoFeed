@@ -23,15 +23,16 @@ export default function SplashScreen({ navigation }) {
 
   return (
     <ImageBackground
-      style={styles2.background}
+      style={styles.background}
       source={require("../assets/logo.png")}
     ></ImageBackground>
   );
 }
 
-const styles2 = StyleSheet.create({
+const styles = StyleSheet.create({
   background: {
     flex: 1,
+    justifyContent: "flex-end",
     alignItems: "center",
   },
 });
