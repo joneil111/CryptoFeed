@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "DigiCoin",
-    "slug": "DigiCoin",
+    "name": "CryptoFeed",
+    "slug": "rCryptoFeed",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/applogo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +19,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
+    "android": {"package": "com.joNeil.CryptoFeed",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
