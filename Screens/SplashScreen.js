@@ -6,11 +6,11 @@ import {
   Dimensions,
   StyleSheet,
   ImageBackground,
+  Image,
+  
 } from "react-native";
 
-import * as Animatable from "react-native-animatable";
 import { AuthContext } from "../Components/contents";
-import { LinearGradient } from "expo-linear-gradient";
 
 export default function SplashScreen({ navigation }) {
   const { signIn } = React.useContext(AuthContext);
@@ -24,15 +24,18 @@ export default function SplashScreen({ navigation }) {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/logo.png")}
-    ></ImageBackground>
+    >
+        <Image source={require("../assets/logo2.png")} style={styles.background}></Image>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
-    flex: 1,
-    justifyContent: "flex-end",
-    alignItems: "center",
+    flexGrow: 1,
+    // justifyContent: 'center',
+    // alignItems: "center",
+    width:null,
+    height:null,
   },
 });

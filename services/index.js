@@ -8,29 +8,31 @@ import {
   SafeAreaView,
   ActivityIndicator,
 } from "react-native";
-import axios from "axios";
+import axios from "axios"; /*Axios is a library that serves to create HTTP requests that are present externally*/
 import { Card, Title, Paragraph } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 
 export default class NewsScreen extends Component {
   state = {
-    articles: [],
+    /*we declare the state */ articles: [],
     isLoading: true,
     errors: null,
   };
 
   getArticles() {
+    /*then  we define the states*/
     const current = new Date();
     const date = `{${current.getFullYear()}/${
+      /*gets the current date*/
       current.getMonth() + 1
     }/${current.getDate()}`;
-    axios
+    axios /*calls the axios api to open specified link with browser and sorts by popularity*/
       .get(
         "https://newsapi.org/v2/everything?q=Cryptocurrency&from=" +
-          date +
+          date /*to ensure current news is dispalyed*/ +
           "&sortBy=popularity&apiKey=7f0268bbd7e74178b529b3eb0e8ec9e4"
       )
-      .then((response) =>
+      .then((response /*gets article information from previous call */) =>
         response.data.articles.map((article) => ({
           date: `${article.publishedAt}`,
           title: `${article.title}`,
@@ -40,6 +42,7 @@ export default class NewsScreen extends Component {
         }))
       )
       .then((articles) => {
+        /*sets the states with new info */
         this.setState({
           articles,
           isLoading: false,
@@ -49,6 +52,7 @@ export default class NewsScreen extends Component {
   }
 
   componentDidMount() {
+    /*Articles are inserted into the DOM and componentDidMount() was used since we interact with the browser */
     this.getArticles();
   }
 
@@ -56,6 +60,7 @@ export default class NewsScreen extends Component {
     const { isLoading, articles } = this.state;
     return (
       <SafeAreaView style={{ flex: 1 }}>
+        {/*main container */}
         <View style={{ flex: 1 }}>
           <StatusBar style="light" />
 
@@ -66,7 +71,7 @@ export default class NewsScreen extends Component {
               marginTop: 9,
             }}
           >
-            {!isLoading ? (
+            {!isLoading ? ( //after screen loads, data retrieved from the response and palced on card, on press of an article, attempts too open that article on browser with user permission
               articles.map((article) => {
                 const { date, title, url, description, urlToImage } = article;
                 return (
@@ -83,7 +88,7 @@ export default class NewsScreen extends Component {
                     }}
                   >
                     <View style={{ flexDirection: "row" }}>
-                      {/*  Text */}
+                      {/*edits the position of the text*/}
                       <View
                         style={{
                           justifyContent: "space-around",
@@ -93,7 +98,7 @@ export default class NewsScreen extends Component {
                       >
                         <Title>{title}</Title>
                       </View>
-                      {/*  Image */}
+                      {/*  edits the position of the image and resizes */}
                       <View style={{ flex: 1 / 3, margin: 10 }}>
                         <Image
                           style={{ width: 100, height: 110, borderRadius: 10 }}
@@ -103,6 +108,7 @@ export default class NewsScreen extends Component {
                     </View>
                     <View style={{ margin: 10 }}>
                       <Paragraph>{description}</Paragraph>
+                      {/*Typography component for showing a paragraph*/}
                       <Text>Published At: {date}</Text>
                     </View>
                   </Card>
@@ -110,6 +116,7 @@ export default class NewsScreen extends Component {
               })
             ) : (
               <View>
+                {/* displaying loading action*/}
                 <ActivityIndicator
                   size="large"
                   color="#155A8B"
@@ -124,7 +131,7 @@ export default class NewsScreen extends Component {
                     paddingTop: 20,
                   }}
                 >
-                  Loading . . .{" "}
+                  Loading . . .
                 </Text>
               </View>
             )}
