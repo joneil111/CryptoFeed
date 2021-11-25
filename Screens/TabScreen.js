@@ -11,7 +11,7 @@ import NewsScreen from "../services/index";
 import DetailsScreen from './DetailsScreen';
 import LiveScreen from   './LiveScreen';
 
-
+//create the navigators
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
@@ -90,7 +90,7 @@ function MarketStack() {
 	);
 }
 
-{/*used the create the tab so the user can switch between screens */}
+{/*used to create the tab so the user can switch between screens */}
 const TabNavigator = (navigation) => (
   <Tab.Navigator
     initialRouteName="HomeScreen"
@@ -104,6 +104,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "Home",
         tabBarColor: "#1b73b3",
         tabBarIcon: ({ color }) => (
+          //display appropriate icon
           <AntDesign name="home" color={color} size={23} />
         ),
       }}
@@ -115,6 +116,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "News",
         tabBarColor: "#155A8B",
         tabBarIcon: ({ color }) => (
+          //display appropriate icon
           <Entypo name="news" color={color} size={23} />
         ),
       }}
@@ -126,6 +128,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "Market",
         tabBarColor: "#0F4165",
         tabBarIcon: ({ color }) => (
+          //display appropriate icon
           <AntDesign name="linechart" color={color} size={23} />
         ),
       }}
@@ -137,6 +140,7 @@ const TabNavigator = (navigation) => (
         tabBarLabel: "Live",
         tabBarColor: "#082133",
         tabBarIcon: ({ color }) => (
+          //display appropriate icon
           <AntDesign name="earth" color={color} size={23} />
         ),
       }}
