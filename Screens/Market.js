@@ -9,7 +9,7 @@ import {
 } from "@gorhom/bottom-sheet";
 import { getMarketData } from "../services/cryptoService";
 
-
+//show the market change of the top crypto currencies over the past week
 export default function Market() {
   const [data, setData] = useState([]);
   const [selectedCoinData, setSelectedCoinData] = useState(null);
