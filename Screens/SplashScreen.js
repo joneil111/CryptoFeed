@@ -6,6 +6,7 @@ import {
   Dimensions,
   StyleSheet,
   ImageBackground,
+  Image,
   
 } from "react-native";
 
@@ -26,17 +27,18 @@ export default function SplashScreen({ navigation }) {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/logo.png")}
-    ></ImageBackground>
+    >
+        <Image source={require("../assets/logo2.png")} style={styles.background}></Image>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: "center",
-    width:SIZE,
-    height:SIZE2+70,
+    flexGrow: 1,
+    // justifyContent: 'center',
+    // alignItems: "center",
+    width:null,
+    height:null,
   },
 });
