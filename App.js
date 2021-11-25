@@ -46,6 +46,7 @@ export default function App() {
   );
 
   return (
+    //creating context provider for autoContext
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         {/*if isloading is true then show splash else tab screen */}
