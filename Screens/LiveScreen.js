@@ -11,6 +11,15 @@ import {
 } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+/*
+  Create hooks that needs to be called inside a function components
+  used for:
+  * State management
+  * Conditional rendering
+  * Toggle flags (true/false)
+  * Counter
+  * Get API data and store it in a state
+*/
 const LiveScreen = ({ navigation }) => {
   const apiData = [];
   const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +28,7 @@ const LiveScreen = ({ navigation }) => {
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
+    // Get the data via the API
     fetch(
       "http://api.coinlayer.com/live?access_key=85810237744104965dbfe907cadf263b&expand=1"
     )
@@ -34,36 +44,46 @@ const LiveScreen = ({ navigation }) => {
             change: "",
             change_pct: "",
           };
+          // Gets the key for each currency 
           tempData.key = key;
+          // Gets the rate for each currency 
           tempData.rate = responseJson.rates[key].rate
             ? responseJson.rates[key].rate.toFixed(3)
             : null;
+          // Gets the high value for each currency
           tempData.high = responseJson.rates[key].high
             ? responseJson.rates[key].high.toFixed(2)
             : null;
+          // Gets the low value for each currency
           tempData.low = responseJson.rates[key].low
             ? responseJson.rates[key].low.toFixed(2)
             : null;
+          // Gets the volume for each currency
           tempData.vol = responseJson.rates[key].vol
             ? responseJson.rates[key].vol.toFixed(3)
             : null;
+          // Gets the change in value for each currency
           tempData.change = responseJson.rates[key].change
             ? responseJson.rates[key].change.toFixed(3)
             : null;
+          // Gets the change in percentage for each currency
           tempData.change_pct = responseJson.rates[key].change_pct
             ? responseJson.rates[key].change_pct.toFixed(3)
             : null;
+          // Add data to array
           apiData.push(tempData);
         });
         setIsLoading(false);
         setFilteredDataSource(apiData);
         setMasterDataSource(apiData);
       })
+      // if theres an error, display it
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
+  // Search through the data for the text(name of the currrency) in the list of currencies
   const searchFilterFunction = (text) => {
     if (text) {
       const newData = masterDataSource.filter(function (item) {
@@ -79,11 +99,13 @@ const LiveScreen = ({ navigation }) => {
     }
   };
 
+  // Display each currency's details in a card style
   const ItemView = ({ item }) => {
     return (
       <TouchableOpacity style={styles.card}>
         <SafeAreaView style={styles.cardBody}>
           <View>
+            {/*Display the title of the currency */}
             <Text style={styles.cardTitle}>{item.key}</Text>
           </View>
 
@@ -94,8 +116,10 @@ const LiveScreen = ({ navigation }) => {
               padding: 10,
             }}
           >
+            {/*Display the details of the currency */}
             <View style={[styles.subCard]}>
               <View style={styles.subCardInfo}>
+                {/*Display the rate of the currency, if there is no value display null */}
                 <Text style={styles.titleDescription}>Rate:</Text>
                 {item.rate === null ? (
                   <Text style={styles.titleDescription}>null</Text>
@@ -104,6 +128,7 @@ const LiveScreen = ({ navigation }) => {
                 )}
               </View>
               <View style={styles.subCardInfo}>
+                {/*Display the volume of the currency, if there is no value display null */}
                 <Text style={styles.titleDescription}>Volume:</Text>
                 {item.vol === null ? (
                   <Text style={styles.titleDescription}>null</Text>
@@ -115,7 +140,9 @@ const LiveScreen = ({ navigation }) => {
             <View style={{ width: 10 }} />
             <View style={styles.subCard}>
               <View style={styles.subCardInfo}>
+                {/*Display the currency's high value */}
                 <Text style={styles.titleDescription}>High:</Text>
+                {/*If the value is null or negative one display the red down arrow otherwise display a green up arrow */}
                 {Math.sign(item.high) === -1 || item.high === null ? (
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Text style={styles.titleDescription}>{item.high}</Text>
@@ -137,7 +164,9 @@ const LiveScreen = ({ navigation }) => {
                 )}
               </View>
               <View style={styles.subCardInfo}>
+                {/*Display the currency's low value*/}
                 <Text style={styles.titleDescription}>Low:</Text>
+                {/*If the value is null or negative one, display a red down arrow otherwise display a green up arrow */}
                 {Math.sign(item.low) === -1 || item.low === null ? (
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Text style={styles.titleDescription}>{item.low}</Text>
@@ -159,7 +188,9 @@ const LiveScreen = ({ navigation }) => {
                 )}
               </View>
               <View style={styles.subCardInfo}>
+                {/*Display the currency's change value */}
                 <Text style={styles.titleDescription}>Change:</Text>
+                {/*If the value if null or negative one, display a red down arrow otherwise display a green up arrow */}
                 {Math.sign(item.change) === -1 || item.change === null ? (
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Text style={styles.titleDescription}>0{item.change}</Text>
@@ -181,7 +212,9 @@ const LiveScreen = ({ navigation }) => {
                 )}
               </View>
               <View style={styles.subCardInfo}>
+                {/*Display the currency's change percentage value */}
                 <Text style={styles.titleDescription}>Change %:</Text>
+                {/*If the value is null or negative one display a red down arrow otherwise display a green up arrow */}
                 {Math.sign(item.change_pct) === -1 ||
                 item.change_pct === null ? (
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -217,6 +250,7 @@ const LiveScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#EEEE" }}>
       <View>
+        {/*Display the search area */}
         <TextInput
           style={styles.textInputStyle}
           onChangeText={(text) => searchFilterFunction(text)}
@@ -224,6 +258,7 @@ const LiveScreen = ({ navigation }) => {
           underlineColorAndroid="transparent"
           placeholder="Search Here"
         />
+        {/*If the screen is loading, display a loading animation */}
         {isLoading === true ? (
           <View>
             <ActivityIndicator
@@ -245,6 +280,7 @@ const LiveScreen = ({ navigation }) => {
           </View>
         ) : null}
 
+        {/*Display the currencies on a flat list */}
         <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
@@ -255,7 +291,7 @@ const LiveScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
+{/*Properties of the display */}
 const styles = StyleSheet.create({
   card: {
     paddingVertical: 10,

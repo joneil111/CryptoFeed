@@ -18,6 +18,7 @@ const HomeScreen = ({ navigation }) => {
     const [filteredDataSource, setFilteredDataSource] = useState([]);
     const [masterDataSource, setMasterDataSource] = useState([]);
 
+	{/*Get teh data from the api */}
     useEffect(() => {
         fetch('http://api.coinlayer.com/list?access_key=85810237744104965dbfe907cadf263b')
         .then((response) => response.json())
@@ -35,12 +36,11 @@ const HomeScreen = ({ navigation }) => {
         });
     }, []);
 
+	 // Search through the data for the text(name of the currrency) in the list of currencies
 const searchFilterFunction = (text) => {
     if (text) {
     const newData = masterDataSource.filter(function (item) {
-        const itemData = item.name
-        ? item.name.toUpperCase()
-        : ''.toUpperCase();
+        const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
     });
@@ -56,6 +56,7 @@ const ItemView = ({ item }) => {
     return (
         <TouchableOpacity 
             style={styles.card} 
+			//Open the details screen when the currency tab is selected
             onPress={() => navigation.navigate('Details', {
 					screen: 'Details',
 					params: { 
@@ -67,12 +68,14 @@ const ItemView = ({ item }) => {
 		>
 		  	<SafeAreaView style={styles.cardBody}>
 				<View style={{ flex: 1, paddingLeft: 20 }}>
+					{/*Display the currency's icon */}
 					<Image 
 						source={{ uri: item.icon_url }}
 						style={{ height: 60, resizeMode: 'contain' }}
 					/>
 				</View>
 				<View style={{ flex: 2 }}>
+					{/*Display the currency's full name and name shortened */}
 					<Text style={styles.cardTitle}>
 						{item.name_full}
 					</Text>
@@ -81,9 +84,11 @@ const ItemView = ({ item }) => {
 					</Text>
 				</View>
 				<View style={{ flex: 2 }}>
+					{/*Display the max supply */}
 					<Text style={{ fontWeight: 'bold' }}>
 						Max Supply: {item.max_supply}
 					</Text>
+					{/*Display the symbol*/}
 					<Text >
 						Symbol: {item.symbol}
 					</Text>
@@ -95,6 +100,7 @@ const ItemView = ({ item }) => {
   };
 
   return (
+	  //Display the search box
     <SafeAreaView style={{ flex: 1, backgroundColor: '#EEE' }}>
       <View>
         <TextInput
@@ -105,6 +111,7 @@ const ItemView = ({ item }) => {
           placeholder="Search Here"
         />
 
+		{/*if the screen is loading, display a loading animation */}
 		{ isLoading === true ? 
 			<View>
 				<ActivityIndicator 
@@ -118,6 +125,7 @@ const ItemView = ({ item }) => {
 			: null
 		}
 
+		{/*Display the currency details to the screen */}
         <FlatList
 			data={filteredDataSource}
 			keyExtractor={(item, index) => index.toString()}
@@ -129,6 +137,7 @@ const ItemView = ({ item }) => {
   );
 };
 
+{/*Properties of the display screen */}
 const styles = StyleSheet.create({
 	card: {
 		paddingVertical: 15,

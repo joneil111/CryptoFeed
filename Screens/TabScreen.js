@@ -15,6 +15,7 @@ import LiveScreen from   './LiveScreen';
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
+{/*Display the heading for each tab and allows you to switch tabs */}
 function HomeStack() {
   return (
     <Stack.Navigator
@@ -37,6 +38,7 @@ function HomeStack() {
     </Stack.Navigator>
   );
 }
+
 function LiveStack() {
 	return (
 		<Stack.Navigator
@@ -88,6 +90,7 @@ function MarketStack() {
 	);
 }
 
+{/*used the create the tab so the user can switch between screens */}
 const TabNavigator = (navigation) => (
   <Tab.Navigator
     initialRouteName="HomeScreen"
