@@ -11,30 +11,27 @@ import Tabscreen from "./Screens/TabScreen";
 LogBox.ignoreAllLogs();
 const Stack = createStackNavigator();
 export default function App() {
-  const [isLoading, setisloading] = React.useState(true);
-  const [userToken, setuserToken] = React.useState(null);
-
+  
+  // state to control if splash is loading
   const initialLoginState = {
     isLoading: true,
   };
-
+  //create context for sign in
   const authContext = React.useMemo(
     () => ({
+      //when sign in called dispatch login state
       signIn: async (leave) => {
-        // setuserToken("fgkl");
-        // setisloading(false);
-
         if (leave !== true) {
           dispatch({ type: "LOGIN" });
         }
-        //console.log('user token',username);
       },
     }),
     []
   );
-
+  //controlls login state. This format allows for later implementation of Sign in and sign out screens
   const loginReducer = (prevstate, action) => {
     switch (action.type) {
+      //when case called set loading to false
       case "LOGIN":
         return {
           isLoading: false,
@@ -42,14 +39,17 @@ export default function App() {
     }
   };
 
+  //set loginstate
   const [loginstate, dispatch] = React.useReducer(
     loginReducer,
     initialLoginState
   );
 
   return (
+    //creating context provider for autoContext
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
+        {/*if isloading is true then show splash else tab screen */}
         {!loginstate.isLoading ? (
           <Stack.Navigator
             screenOptions={{
@@ -57,7 +57,7 @@ export default function App() {
             }}
           >
             <Stack.Screen
-              name="DigiCoin"
+              name="CryptoFeed"
               component={Tabscreen}
               options={{
                 headerStyle: {
