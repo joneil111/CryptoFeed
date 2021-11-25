@@ -71,7 +71,7 @@ export default class NewsScreen extends Component {
               marginTop: 9,
             }}
           >
-            {!isLoading ? ( //after screen loads, data retrieved from the response and palced on card
+            {!isLoading ? ( //after screen loads, data retrieved from the response and palced on card, on press of an article, attempts too open that article on browser with user permission
               articles.map((article) => {
                 const { date, title, url, description, urlToImage } = article;
                 return (
@@ -88,7 +88,7 @@ export default class NewsScreen extends Component {
                     }}
                   >
                     <View style={{ flexDirection: "row" }}>
-                      {/*  Text */}
+                      {/*edits the position of the text*/}
                       <View
                         style={{
                           justifyContent: "space-around",
@@ -98,7 +98,7 @@ export default class NewsScreen extends Component {
                       >
                         <Title>{title}</Title>
                       </View>
-                      {/*  Image */}
+                      {/*  edits the position of the image and resizes */}
                       <View style={{ flex: 1 / 3, margin: 10 }}>
                         <Image
                           style={{ width: 100, height: 110, borderRadius: 10 }}
@@ -108,6 +108,7 @@ export default class NewsScreen extends Component {
                     </View>
                     <View style={{ margin: 10 }}>
                       <Paragraph>{description}</Paragraph>
+                      {/*Typography component for showing a paragraph*/}
                       <Text>Published At: {date}</Text>
                     </View>
                   </Card>
@@ -115,6 +116,7 @@ export default class NewsScreen extends Component {
               })
             ) : (
               <View>
+                {/* displaying loading action*/}
                 <ActivityIndicator
                   size="large"
                   color="#155A8B"
@@ -129,7 +131,7 @@ export default class NewsScreen extends Component {
                     paddingTop: 20,
                   }}
                 >
-                  Loading . . .{" "}
+                  Loading . . .
                 </Text>
               </View>
             )}
