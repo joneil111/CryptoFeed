@@ -20,9 +20,15 @@ export default class NewsScreen extends Component {
   };
 
   getArticles() {
+    const current = new Date();
+    const date = `{${current.getFullYear()}/${
+      current.getMonth() + 1
+    }/${current.getDate()}`;
     axios
       .get(
-        "https://newsapi.org/v2/everything?q=Cryptocurrency&from=2021-11-20&sortBy=popularity&apiKey=7f0268bbd7e74178b529b3eb0e8ec9e4"
+        "https://newsapi.org/v2/everything?q=Cryptocurrency&from=" +
+          date +
+          "&sortBy=popularity&apiKey=7f0268bbd7e74178b529b3eb0e8ec9e4"
       )
       .then((response) =>
         response.data.articles.map((article) => ({

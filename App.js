@@ -3,11 +3,12 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { LogBox } from "react-native";
 import { AuthContext } from "./Components/contents";
 import Home from "./Screens/Home";
 import RootStackScreen from "./Screens/RootStackScreen";
 import Tabscreen from "./Screens/TabScreen";
-console.disableYellowBox = true;
+LogBox.ignoreAllLogs();
 const Stack = createStackNavigator();
 export default function App() {
   const [isLoading, setisloading] = React.useState(true);
@@ -28,7 +29,6 @@ export default function App() {
         }
         //console.log('user token',username);
       },
-      
     }),
     []
   );
@@ -37,8 +37,6 @@ export default function App() {
     switch (action.type) {
       case "LOGIN":
         return {
-          
-
           isLoading: false,
         };
     }
