@@ -60,7 +60,6 @@ export default class NewsScreen extends Component {
     const { isLoading, articles } = this.state;
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        {" "}
         {/*main container */}
         <View style={{ flex: 1 }}>
           <StatusBar style="light" />
@@ -72,7 +71,7 @@ export default class NewsScreen extends Component {
               marginTop: 9,
             }}
           >
-            {!isLoading ? (
+            {!isLoading ? ( //after screen loads, data retrieved from the response and palced on card
               articles.map((article) => {
                 const { date, title, url, description, urlToImage } = article;
                 return (
